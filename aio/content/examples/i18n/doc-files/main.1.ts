@@ -1,15 +1,12 @@
 // #docregion
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-// #docregion enableProdMode
-import { enableProdMode } from '@angular/core';
-
-// Enable production mode unless running locally
-if (!/localhost/.test(document.location.host)) {
+if (environment.production) {
   enableProdMode();
 }
-// #enddocregion enableProdMode
 
 platformBrowserDynamic().bootstrapModule(AppModule);
